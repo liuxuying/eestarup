@@ -1,0 +1,59 @@
+Please enter authorization code: 4/pQA32kEHlcdB63JIyqhS-RYD5hrUYxgonb8nNa0RYtzqP_LYTdM4qAs
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ee/oauth.py", line 70, in request_token
+    response = urllib2.urlopen(TOKEN_REQ_URL,
+NameError: name 'urllib2' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py", line 1317, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1016, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 956, in send
+    self.connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1384, in connect
+    super().connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 928, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py", line 727, in create_connection
+    raise err
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [Errno 60] Operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/bin/earthengine", line 11, in <module>
+    sys.exit(main())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ee/cli/eecli.py", line 69, in main
+    dispatcher.run(args, config)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ee/cli/commands.py", line 284, in run
+    self.command_dict[vars(args)[self.dest]].run(args, config)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ee/cli/commands.py", line 339, in run
+    write_token(auth_code)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ee/cli/commands.py", line 305, in write_token
+    token = ee.oauth.request_token(auth_code)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ee/oauth.py", line 76, in request_token
+    urlencode(request_args).encode()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py", line 1360, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/request.py", line 1319, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 60] Operation timed out>
